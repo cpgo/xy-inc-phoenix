@@ -5,4 +5,4 @@
 
 Requisições para [`localhost:4000/poi`](http://localhost:4000/poi)
 
-[`Exemplo do app rodando no heroku`](`https://aqueous-taiga-52883.herokuapp.com/poi`)
+[`Exemplo do app rodando no heroku`](https://aqueous-taiga-52883.herokuapp.com/poi)
