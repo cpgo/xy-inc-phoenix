@@ -7,9 +7,9 @@ defmodule XyInc.Base.Calculator do
   def by_proximity(%{x: x, y: y, max: max, list: list}) do
     list
       |> Enum.map(fn e -> 
-          %{id: e.id, name: e.name, distance: distance(%{x: e.x, y: e.y}, %{x: String.to_integer(x), y: String.to_integer(y)})}
+          %{id: e.id, name: e.name, distance: distance(%{x: e.x, y: e.y}, %{x: x, y: y})}
         end)
-      |> Enum.reject(fn(e) -> e.distance > max end)
+      |> Enum.reject(fn(e) -> e.distance >= max end)
       |> Enum.map(fn(e) -> %{id: e.id, name: e.name} end)
   end
 end

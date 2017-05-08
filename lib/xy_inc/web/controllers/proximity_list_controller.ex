@@ -5,9 +5,9 @@ defmodule XyInc.Web.ProximityListController do
 
   action_fallback XyInc.Web.FallbackController
 
-  def index(conn, %{"x" => x, "y" => y}) do
+  def index(conn, %{"x" => x, "y" => y, "max" => max}) do
     pois = XyInc.Base.list_points()
-    near_points = Calculator.by_proximity(%{x: x, y: y, max: 10, list: pois})
+    near_points = Calculator.by_proximity(%{x: String.to_integer(x), y: String.to_integer(y), max: String.to_integer(max), list: pois})
     render(conn, "index.json", near_points: near_points)
   end
 
