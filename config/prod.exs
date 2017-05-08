@@ -18,6 +18,7 @@ config :xy_inc, XyInc.Web.Endpoint,
   url: [scheme: "https", host: "aqueous-taiga-52883.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   url: [host: "example.com", port: 80],
+  cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 config :xy_inc, XyInc.Repo,
