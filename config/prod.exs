@@ -15,7 +15,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :xy_inc, XyInc.Web.Endpoint,
   on_init: {XyInc.Web.Endpoint, :load_from_system_env, []},
-  url: [scheme: "https", host: "aqueous-taiga-52883.herokuapp.com", port: 443],
+  url: [scheme: "https", host: "aqueous-taiga-52883.herokuapp.com/", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json",
