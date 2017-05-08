@@ -5,7 +5,9 @@ defmodule XyInc.Web.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", XyInc.Web do
+  scope "/", XyInc.Web do
     pipe_through :api
+    resources "/points", PointOfInterestController, except: [:new, :edit]
+    get "/near", ProximityListController, :index
   end
 end
